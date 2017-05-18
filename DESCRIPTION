@@ -1,0 +1,13 @@
+Package: krisUtils
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.1
+Authors@R: person("Kris", "Eberwein", email = "eberwein@knights.ucf.edu",
+                  role = c("aut", "cre"))
+Description: Personal R package.
+Depends: R (>= 3.3.3)
+Imports:
+	magrittr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
