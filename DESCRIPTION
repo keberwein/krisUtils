@@ -6,7 +6,10 @@ Authors@R: person("Kris", "Eberwein", email = "eberwein@knights.ucf.edu",
 Description: Personal R package.
 Depends: R (>= 3.3.3)
 Imports:
-	magrittr
+	magrittr,
+	Rcpp (>= 0.11.3)
+LinkingTo:
+	Rcpp
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

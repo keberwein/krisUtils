@@ -1,7 +1,6 @@
 #' @title urlExists
 #' @description A utility function to run a tryCatch on a URL.
 #' @param target url
-#' @import utils
 #' @export
 urlExists <- function(target) {  
     tryCatch({  

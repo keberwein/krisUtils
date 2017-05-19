@@ -4,10 +4,12 @@
 \alias{KnitPost}
 \title{Knit Rmd to Md}
 \usage{
-KnitPost(input = NULL)
+KnitPost(fileName = NULL, category = NULL)
 }
 \arguments{
-\item{input}{The Rmd file you would like to knit.}
+\item{fileName}{The Rmd file you would like to knit.}
+
+\item{category}{The blog category where the post should be placed.}
 }
 \description{
 Knit an Rmd file to an Md that is suitable for a Jekyll blog.
