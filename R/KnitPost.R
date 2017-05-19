@@ -2,6 +2,7 @@
 #' @description Knit an Rmd file to an Md that is suitable for a Jekyll blog.
 #' @param fileName The Rmd file you would like to knit.
 #' @param category The blog category where the post should be placed.
+#' @param fig Logical. Is Rmardown producting figures? The default is true.
 #' @import stats
 #' @examples
 #' 
@@ -11,7 +12,7 @@
 #' @export
 
 
-KnitPost <- function(fileName=NULL, category=NULL) {
+KnitPost <- function(fileName=NULL, category=NULL, fig=TRUE) {
     if(is.null(fileName)){print("Please enter file name of the new post.")}
     if(is.null(category)){"Please specify the category of the new post."}
     
@@ -25,11 +26,13 @@ KnitPost <- function(fileName=NULL, category=NULL) {
     
     render_jekyll(highlight = "pygments")
     opts_knit$set(base.url = '/', base.dir = site.path)
-    opts_chunk$set(fig.path=fig.dir, fig.width=8.5, fig.height=5.25, dev='svg', cache=F, 
-                   warning=F, message=F, cache.path=cache.path, tidy=F)   
+    if(isTRUE(fig)){
+    opts_chunk$set(fig.path=fig.dir, fig.width=8.5, fig.height=5.25, dev='svg', cache=F,
+                   warning=F, message=F, cache.path=cache.path, tidy=F)
+    }
     
     setwd(rmd.path) # setwd to base
     
-    knit(fileName, output = paste0("../_posts/blog/", sub(".Rmd$", "", basename(fileName)), ".md"), envir = parent.frame())
+    knit(fileName, output = paste0("../_posts/", category, "/", sub(".Rmd$", "", basename(fileName)), ".md"), envir = parent.frame())
 }
 
