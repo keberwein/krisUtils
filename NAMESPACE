@@ -2,6 +2,7 @@
 
 export("%<>%")
 export("%>%")
+export()
 export(KnitPost)
 export(addCommas)
 export(colMean)

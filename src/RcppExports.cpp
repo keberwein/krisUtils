@@ -5,6 +5,17 @@
 
 using namespace Rcpp;
 
+// Cdataframe
+List Cdataframe(List x);
+RcppExport SEXP krisUtils_Cdataframe(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< List >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cdataframe(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // removeNA
 NumericVector removeNA(NumericVector a);
 RcppExport SEXP krisUtils_removeNA(SEXP aSEXP) {

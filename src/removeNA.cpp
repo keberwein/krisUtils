@@ -4,6 +4,10 @@ using namespace Rcpp;
 //' @title removeNA
 //' @description Remove NA from string or vector.
 //' @param a A vector of numerfic values.
+//' @usage \dontrun{
+//' noNAs <- removeNA(x)
+//' 
+//' }
 //' @export
 // [[Rcpp::export]]
 NumericVector removeNA(NumericVector a)

@@ -4,7 +4,10 @@
 \alias{removeNA}
 \title{removeNA}
 \usage{
-removeNA(a)
+\dontrun{
+noNAs <- removeNA(x)
+
+}
 }
 \arguments{
 \item{a}{A vector of numerfic values.}
