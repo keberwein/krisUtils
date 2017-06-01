@@ -25,9 +25,9 @@ KnitPost <- function(fileName=NULL, category=NULL, fig=TRUE) {
     cache.path <- paste0(site.path, "_cache/") # necessary for plots
     
     render_jekyll(highlight = "pygments")
-    opts_knit$set(base.url = '/', base.dir = site.path)
+    knitr::opts_knit$set(base.url = '/', base.dir = site.path)
     if(isTRUE(fig)){
-    opts_chunk$set(fig.path=fig.dir, fig.width=8.5, fig.height=5.25, dev='svg', cache=F,
+    knitr::opts_chunk$set(fig.path=fig.dir, fig.width=8.5, fig.height=5.25, dev='svg', cache=F,
                    warning=F, message=F, cache.path=cache.path, tidy=F)
     }
     
