@@ -12,7 +12,7 @@
 NULL
 
 Cdataframe <- function(x) {
-    .Call('krisUtils_Cdataframe', PACKAGE = 'krisUtils', x)
+    .Call('_krisUtils_Cdataframe', PACKAGE = 'krisUtils', x)
 }
 
 #' @title removeNA
@@ -24,6 +24,6 @@ Cdataframe <- function(x) {
 #' }
 #' @export
 removeNA <- function(a) {
-    .Call('krisUtils_removeNA', PACKAGE = 'krisUtils', a)
+    .Call('_krisUtils_removeNA', PACKAGE = 'krisUtils', a)
 }
 

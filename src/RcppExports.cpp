@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // Cdataframe
 List Cdataframe(List x);
-RcppExport SEXP krisUtils_Cdataframe(SEXP xSEXP) {
+RcppExport SEXP _krisUtils_Cdataframe(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // removeNA
 NumericVector removeNA(NumericVector a);
-RcppExport SEXP krisUtils_removeNA(SEXP aSEXP) {
+RcppExport SEXP _krisUtils_removeNA(SEXP aSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -26,4 +26,15 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(removeNA(a));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_krisUtils_Cdataframe", (DL_FUNC) &_krisUtils_Cdataframe, 1},
+    {"_krisUtils_removeNA", (DL_FUNC) &_krisUtils_removeNA, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_krisUtils(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
